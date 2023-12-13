@@ -1,16 +1,18 @@
+import useGetMovies from 'hooks/useGetMovies';
+import MovieItem from './MovieItem/MovieItem';
+
 export const App = () => {
+  const { data, loading, error } = useGetMovies(
+    'https://api.themoviedb.org/3/trending/all/day'
+  );
+  if (loading) {
+    return 'loading';
+  }
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
+    <>
+      {data.results.map(item => (
+        <MovieItem movie={item} />
+      ))}
+    </>
   );
 };
