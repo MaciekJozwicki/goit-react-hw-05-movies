@@ -1,4 +1,4 @@
-import MovieDetails from 'components/MovieDetails/MovieDetails';
+// import MovieDetails from 'components/MovieDetails/MovieDetails';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
