@@ -31,7 +31,7 @@ const useGetMovies = url => {
 
     fetchData();
   }, [url]);
-  console.log(url);
+  
   return { data, loading, error };
 };
 

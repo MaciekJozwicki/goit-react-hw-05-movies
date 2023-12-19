@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 const MovieItem = ({ movie }) => {
   return (
     <li key={movie.id}>
-      
       <Link to={`/movies/${movie.id}`} state={{ movie: movie }}>
         <h2>{movie.title}</h2>
 
@@ -14,6 +13,7 @@ const MovieItem = ({ movie }) => {
           alt={movie.title}
         />
       </Link>
+      
     </li>
   );
 };

@@ -6,6 +6,6 @@ export const Home = () => {
   const { data, loading } = useGetMovies(
     'https://api.themoviedb.org/3/trending/all/day'
   );
-  console.log(data);
+ 
   return <>{!data ? <Loader /> : <MovieResults data={data} />}</>;
 };

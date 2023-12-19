@@ -14,7 +14,6 @@ const SearchPage = () => {
   if (loading) {
     return <Loader />;
   }
-  console.log(data);
 
   return (
     <>

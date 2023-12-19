@@ -5,6 +5,8 @@ import { App } from 'components/App';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Movies from 'components/Movies/Movies';
 import MovieDetails from 'components/MovieDetails/MovieDetails';
+import Cast from 'components/Cast/Cast';
+import Reviews from 'components/Reviews/Reviews';
 
 const router = createBrowserRouter([
   {
@@ -18,14 +20,16 @@ const router = createBrowserRouter([
   {
     path: '/movies/:movieId',
     element: <MovieDetails />,
-  },
-  {
-    path: '/movies/:movieId/cast',
-    element: <div>Hello world!</div>,
-  },
-  {
-    path: '/movies/:movieId/reviews',
-    element: <div>Hello world!</div>,
+    children: [
+      {
+        path: 'cast',
+        element: <Cast />,
+      },
+      {
+        path: 'reviews',
+        element: <Reviews />,
+      },
+    ],
   },
 ]);
 
