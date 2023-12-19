@@ -10,7 +10,6 @@ const useGetMovies = url => {
     const fetchData = async () => {
       try {
         setLoading(true);
-        //   const response = await axios.get(url);
 
         const response = await axios({
           method: 'GET',
@@ -32,7 +31,7 @@ const useGetMovies = url => {
 
     fetchData();
   }, [url]);
-
+  console.log(url);
   return { data, loading, error };
 };
 
