@@ -5,7 +5,9 @@ const ReviewsItem = ({ id, author, image, content }) => {
     <li key={id}>
       <div>
         <h2>Author: {author}</h2>
-        <img src={`https://image.tmdb.org/t/p/w500/${image}`} alt={author} />
+        {image && (
+          <img src={`https://image.tmdb.org/t/p/w500/${image}`} alt={author} />
+        )}
       </div>
       <p>{content}</p>
     </li>

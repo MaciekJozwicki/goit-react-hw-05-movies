@@ -21,7 +21,7 @@ const SearchPage = () => {
         <SearchBar setSearchValue={setSearchValue} />
         <Button onClick={() => setFinalValue(searchValue)}>Search</Button>
       </div>
-      {!data ? <Loader /> : <MovieResults data={data} />}
+      {!data ? <Loader /> : <MovieResults data={data} fromSearchBar={true} />}
     </>
   );
 };

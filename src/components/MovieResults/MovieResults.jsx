@@ -1,11 +1,10 @@
 import MovieItem from 'components/MovieItem/MovieItem';
 
-const MovieResults = ({ data }) => {
-  
+const MovieResults = ({ data, fromSearchBar }) => {
   return (
     <>
       {data.results.map(item => (
-        <MovieItem movie={item} />
+        <MovieItem key={item.id} movie={item} fromSearchBar={fromSearchBar} />
       ))}
     </>
   );

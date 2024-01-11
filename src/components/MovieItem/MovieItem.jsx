@@ -2,10 +2,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const MovieItem = ({ movie }) => {
+const MovieItem = ({ movie, fromSearchBar }) => {
   return (
     <li key={movie.id}>
-      <Link to={`/movies/${movie.id}`} state={{ movie: movie }}>
+      <Link
+        to={`/movies/${movie.id}`}
+        state={{ movie: movie, fromSearchBar: fromSearchBar }}
+      >
         <h2>{movie.title}</h2>
 
         <img
@@ -13,7 +16,6 @@ const MovieItem = ({ movie }) => {
           alt={movie.title}
         />
       </Link>
-      
     </li>
   );
 };

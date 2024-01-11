@@ -20,6 +20,7 @@ const Reviews = () => {
       {data.results.map(item => {
         return (
           <ReviewsItem
+            key={item.id}
             id={item.id}
             author={item.author_details.name}
             image={item.author_details.avatar_path}

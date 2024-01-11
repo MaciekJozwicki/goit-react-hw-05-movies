@@ -14,13 +14,17 @@ const Cast = () => {
   if (loading) {
     return <Loader />;
   }
-  
 
   return (
     <div>
       {data.cast.map(item => {
         return (
-          <CastItem id={item.id} name={item.name} image={item.profile_path} />
+          <CastItem
+            key={item.id}
+            id={item.id}
+            name={item.name}
+            image={item.profile_path}
+          />
         );
       })}
     </div>
