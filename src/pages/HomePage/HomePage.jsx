@@ -11,7 +11,6 @@ const HomePage = () => {
   const searchBar = location.state?.searchBar;
 
   useEffect(() => {
-    console.log(searchBar);
     if (searchBar && searchBar === true) {
       setPage(true);
     }
