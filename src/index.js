@@ -7,12 +7,14 @@ import Movies from 'components/Movies/Movies';
 import MovieDetails from 'components/MovieDetails/MovieDetails';
 import Cast from 'components/Cast/Cast';
 import Reviews from 'components/Reviews/Reviews';
+import ErrorPage from 'error-page';
 
 const router = createBrowserRouter(
   [
     {
       path: '/',
       element: <App />,
+      errorElement: <ErrorPage />,
     },
     {
       path: '/movies',
