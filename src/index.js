@@ -45,7 +45,7 @@ import ErrorPage from 'error-page';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <HashRouter basename="/">
+  <HashRouter basename="/goit-react-hw-05-movies">
     <Routes>
       <Route path="/" element={<App />} errorElement={ErrorPage} />
       <Route path="/movies" element={<Movies />} />
