@@ -8,30 +8,33 @@ import MovieDetails from 'components/MovieDetails/MovieDetails';
 import Cast from 'components/Cast/Cast';
 import Reviews from 'components/Reviews/Reviews';
 
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <App />,
-  },
-  {
-    path: '/movies',
-    element: <Movies />,
-  },
-  {
-    path: '/movies/:movieId',
-    element: <MovieDetails />,
-    children: [
-      {
-        path: 'cast',
-        element: <Cast />,
-      },
-      {
-        path: 'reviews',
-        element: <Reviews />,
-      },
-    ],
-  },
-]);
+const router = createBrowserRouter(
+  [
+    {
+      path: '/',
+      element: <App />,
+    },
+    {
+      path: '/movies',
+      element: <Movies />,
+    },
+    {
+      path: '/movies/:movieId',
+      element: <MovieDetails />,
+      children: [
+        {
+          path: 'cast',
+          element: <Cast />,
+        },
+        {
+          path: 'reviews',
+          element: <Reviews />,
+        },
+      ],
+    },
+  ],
+  { basename: '' }
+);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

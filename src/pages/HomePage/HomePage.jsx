@@ -7,12 +7,15 @@ import Button from 'components/Button/Button';
 const HomePage = () => {
   const [page, setPage] = useState(false);
   const location = useLocation();
+  console.log('location', location);
+  const searchBar = location.state?.searchBar;
 
   useEffect(() => {
-    if (location.state.searchBar && location.state.searchBar === true) {
+    console.log(searchBar);
+    if (searchBar && searchBar === true) {
       setPage(true);
     }
-  }, [location.state.searchBar]);
+  }, [searchBar]);
 
   return (
     <>
