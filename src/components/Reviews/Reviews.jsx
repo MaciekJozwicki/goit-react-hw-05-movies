@@ -7,7 +7,7 @@ import ReviewsItem from 'components/ReviewsItem/ReviewsItem';
 const Reviews = () => {
   const location = useLocation();
   const movieId = location.state.movie.id;
-  console.log('location', location);
+
   const { data, loading } = useGetMovies(
     `https://api.themoviedb.org/3/movie/${movieId}/reviews`
   );
@@ -17,6 +17,9 @@ const Reviews = () => {
 
   return (
     <div>
+      {data.results.length === 0 && (
+        <p>We don't have any reviews for this movie</p>
+      )}
       {data.results.map(item => {
         return (
           <ReviewsItem

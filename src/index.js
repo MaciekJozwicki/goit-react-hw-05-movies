@@ -45,11 +45,14 @@ import ErrorPage from 'error-page';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <HashRouter basename="">
+  <HashRouter basename="/">
     <Routes>
-      <Route path="/" element={<App />} errorElement={<ErrorPage />} />
+      <Route path="/" element={<App />} errorElement={ErrorPage} />
       <Route path="/movies" element={<Movies />} />
-      <Route path="/movies/:movieId" element={<MovieDetails />} />
+      <Route path="/movies/:movieId" element={<MovieDetails />}>
+        <Route path="cast" element={<Cast />} />
+        <Route path="reviews" element={<Reviews />} />
+      </Route>
     </Routes>
   </HashRouter>
 

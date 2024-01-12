@@ -8,7 +8,7 @@ const ReviewsLazy = lazy(() => import('components/Reviews/Reviews'));
 const MovieDetails = () => {
   const location = useLocation();
   const { movie } = location.state;
-  console.log(movie);
+
   const movieId = location.state.movie.id;
   const redirectedTo = location.state.fromSearchBar ? true : false;
   return (
