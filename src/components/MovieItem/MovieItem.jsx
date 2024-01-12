@@ -3,7 +3,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const MovieItem = ({ movie, fromSearchBar }) => {
-  console.log(movie);
   return (
     <li key={movie.id}>
       <Link

@@ -8,21 +8,28 @@ const ReviewsLazy = lazy(() => import('components/Reviews/Reviews'));
 const MovieDetails = () => {
   const location = useLocation();
   const { movie } = location.state;
+  console.log(movie);
   const movieId = location.state.movie.id;
   const redirectedTo = location.state.fromSearchBar ? true : false;
   return (
-    <>
-      <Link to={`/`} state={{ searchBar: redirectedTo }}>
+    <div className="movie-details">
+      <Link className="button" to={`/`} state={{ searchBar: redirectedTo }}>
         Go back
       </Link>
-      <h2>{movie.title}</h2>
-
-      <img
-        src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-        alt={movie.title}
-      />
+      <div className="movie-info">
+        <h2>TITLE: {movie.name}</h2>
+        <h3>Air Date: {movie.first_air_date}</h3>
+        <h3>Origin Country: {movie.origin_country}</h3>
+        <h3>Overwiev: {movie.overview}</h3>
+        <h3>Popularity: - {movie.popularity} - points</h3>
+        <img
+          src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+          alt={movie.title}
+        />
+      </div>
 
       <Link
+        className="button"
         to={`/movies/${movieId}/cast`}
         state={{ movie: movie }}
         element={
@@ -35,6 +42,7 @@ const MovieDetails = () => {
       </Link>
 
       <Link
+        className="button"
         to={`/movies/${movieId}/reviews`}
         state={{ movie: movie }}
         element={
@@ -47,7 +55,7 @@ const MovieDetails = () => {
       </Link>
 
       <Outlet />
-    </>
+    </div>
   );
 };
 
