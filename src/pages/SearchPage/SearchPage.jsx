@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Button from 'components/Button/Button';
 import SearchBar from 'components/SearchBar/SearchBar';
 import useGetMovies from 'hooks/useGetMovies';
@@ -7,9 +8,9 @@ import MovieResults from 'components/MovieResults/MovieResults';
 
 const SearchPage = () => {
   const [searchValue, setSearchValue] = useState('');
-  const [finalValue, setFinalValue] = useState('');
+
   const { data, loading } = useGetMovies(
-    `https://api.themoviedb.org/3/search/movie?query=${finalValue}`
+    `https://api.themoviedb.org/3/search/movie?query=${searchValue}`
   );
   if (loading) {
     return <Loader />;
@@ -18,8 +19,10 @@ const SearchPage = () => {
   return (
     <>
       <div>
+        <Link to="/">
+          <Button>Home</Button>
+        </Link>
         <SearchBar setSearchValue={setSearchValue} />
-        <Button onClick={() => setFinalValue(searchValue)}>Search</Button>
       </div>
       {!data ? <Loader /> : <MovieResults data={data} fromSearchBar={true} />}
     </>

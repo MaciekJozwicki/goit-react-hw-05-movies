@@ -3,24 +3,26 @@ import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router';
 import { Home } from '../../components/Home/Home';
 import Button from 'components/Button/Button';
+import { Link } from 'react-router-dom';
 
 const HomePage = () => {
-  const [page, setPage] = useState(false);
-  const location = useLocation();
+  // const location = useLocation();
 
-  const searchBar = location.state?.searchBar;
+  // const searchBar = location.state?.searchBar;
 
-  useEffect(() => {
-    if (searchBar && searchBar === true) {
-      setPage(true);
-    }
-  }, [searchBar]);
+  // useEffect(() => {
+  //   if (searchBar && searchBar === true) {
+  //     setPage(true);
+  //   }
+  // }, [searchBar]);
 
   return (
     <>
-      <Button onClick={() => setPage(!page)}>Home</Button>
-      <Button onClick={() => setPage(!page)}>Movies</Button>
-      {!page ? <Home /> : <SearchPage />}
+      <Link to="/search">
+        <Button>Search</Button>
+      </Link>
+
+      {<Home />}
     </>
   );
 };
