@@ -4,19 +4,14 @@ import { Link } from 'react-router-dom';
 
 const MovieItem = ({ movie, fromSearchBar }) => {
   return (
-    <li key={movie.id}>
+    <p key={movie.id} className="movie-link">
       <Link
         to={`/movies/${movie.id}`}
         state={{ movie: movie, fromSearchBar: fromSearchBar }}
       >
-        <h2>{movie.title}</h2>
-
-        <img
-          src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-          alt={movie.title}
-        />
+        {movie.title}
       </Link>
-    </li>
+    </p>
   );
 };
 

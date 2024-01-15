@@ -1,4 +1,4 @@
-// import useGetMovies from 'hooks/useGetMovies';
+
 import React from 'react';
 
 const Movies = () => {
